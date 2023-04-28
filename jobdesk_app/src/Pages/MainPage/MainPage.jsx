@@ -8,6 +8,7 @@ import {
   Burger,
   useMantineTheme,
 } from "@mantine/core";
+import JobBoard from "./Components/JobBoard/JobBoard";
 
 const MainPage = () => {
   const customTheme = {
@@ -58,7 +59,7 @@ const MainPage = () => {
           </Header>
         }
       >
-        <Text>Resize app to see responsive navbar in action</Text>
+        <JobBoard />
       </AppShell>
     </>
   );
