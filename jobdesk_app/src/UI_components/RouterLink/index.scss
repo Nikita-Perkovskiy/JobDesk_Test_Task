@@ -1,0 +1,11 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.routerLink {
+  @include base-text;
+}
+
+.routerLink:hover {
+  font-weight: 500;
+  color: $base-blue;
+}

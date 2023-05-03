@@ -1,0 +1,43 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.header {
+  background-color: $base-white;
+}
+
+.header-content__wrapper {
+  margin: auto;
+  height: 84px;
+  @include base-proportion;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo__wrapper {
+  display: flex;
+  justify-content: start;
+}
+
+.header-logo__svg {
+  display: flex;
+  align-items: center;
+}
+.header-nav__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+.header-logo__content-text {
+  padding-left: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: $base-grey;
+}

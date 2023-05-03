@@ -1,0 +1,13 @@
+@mixin base-proportion {
+  max-width: 1180px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@mixin base-text {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $base-grey;
+  text-decoration: none;
+}

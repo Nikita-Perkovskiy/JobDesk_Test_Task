@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 import RouterLink from "../RouterLink/RouterLink";
 import LogoSvg from "./Svges/LogoSvg/LogoSvg";
 const HeaderMenu = () => {
@@ -10,7 +10,9 @@ const HeaderMenu = () => {
             <div className="header-logo__svg">
               <LogoSvg />
             </div>
-            <h1 className="header-logo__text">Jobored</h1>
+            <div className="header-logo__content">
+              <h1 className="header-logo__content-text">Jobored</h1>
+            </div>
           </div>
           <div className="header-nav__wrapper">
             <div>
