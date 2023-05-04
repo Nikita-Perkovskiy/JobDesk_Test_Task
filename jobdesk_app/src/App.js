@@ -9,6 +9,8 @@ import {
 } from "./helpers/AuthenticationParams";
 import getFromLS from "./config/getFromLS";
 import { ass_token_key } from "./helpers/LocalStorageKeys";
+// import { customTheme } from "./styles/customTheme";
+// import { customGlobalStyles } from "./styles/customGlobalStyles";
 
 const App = () => {
   useEffect(() => {
@@ -29,18 +31,7 @@ const App = () => {
   const ass_tokenFromLS = getFromLS(ass_token_key);
 
   return (
-    <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
-      globalStyles={{
-        body: {
-          fontFamily: "'Inter', sans-serif",
-        },
-        h1: {
-          fontFamily: "'Poppins', sans-serif",
-        },
-      }}
-    >
+    <MantineProvider withGlobalStyles withNormalizeCSS>
       <AppRouter />
     </MantineProvider>
   );

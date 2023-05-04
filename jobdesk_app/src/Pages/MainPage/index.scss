@@ -1,0 +1,15 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.mainPage-fon {
+  width: 100vw;
+  height: 100vh;
+  background-color: $fon-gray;
+}
+
+.mainPage__content-wrapper {
+  @include base-proportion;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
