@@ -12,3 +12,10 @@
   color: $base-grey;
   text-decoration: none;
 }
+
+@mixin base-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: $base-blue;
+}

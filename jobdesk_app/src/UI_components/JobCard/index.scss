@@ -1,0 +1,68 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.jobCard__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1.5rem;
+  width: 100vw;
+  max-width: 750px;
+  height: 100vh;
+  max-height: 130px;
+  background-color: $base-white;
+  border: 1px solid $border-white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.jobCard__title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.jobCard__content-wrapper,
+.jobCard__footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.jobCard__title {
+  @include base-title;
+}
+
+.jobCard__payment {
+  @include base-text;
+  font-weight: 600;
+  color: $base-black;
+}
+
+.jobCard__workTime,
+.jobCard__location {
+  @include base-text;
+  color: $base-black;
+}
+
+.jobCard__location {
+  margin-left: 0.8rem;
+}
+
+.jobCard__workTime {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.jobCard__workTime::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 45%;
+  background-color: $gray-600;
+  top: 50%;
+  left: -1rem;
+  transform: translateY(-50%);
+}

@@ -1,4 +1,4 @@
-const getFromLS = (key) => {
+export const getFromLS = (key) => {
   const lsItem = localStorage.getItem(key);
   if (!lsItem) return [];
   try {
@@ -8,5 +8,3 @@ const getFromLS = (key) => {
     return [];
   }
 };
-
-export default getFromLS;
