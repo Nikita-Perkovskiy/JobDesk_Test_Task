@@ -4,15 +4,38 @@ import AppRouter from "./Routes/AppRouter";
 import { useEffect, useState } from "react";
 import { sendRequest } from "./config/sendRequest";
 import { API_URL } from "./helpers/API";
+import { useLocalStorage } from "./config/customHooks/useLocalStorage";
 import {
   AuthenticationParams,
   X_SECRET_KEY,
 } from "./helpers/AuthenticationParams";
-import { getFromLS } from "./config/LocalStorageFunctions/getFromLS";
-import { ass_token_key, vacation_list_key } from "./helpers/LocalStorageKeys";
+import {
+  ass_token_key,
+  myFavPosts_key,
+  vacation_list_key,
+} from "./helpers/LocalStorageKeys";
 
 const App = () => {
-  const [myFavoriteVacations, setMyFavoriteVacations] = useState([]);
+  const [myFavoriteVacations, setMyFavoriteVacations] = useLocalStorage(
+    myFavPosts_key,
+    []
+  );
+  const [vacansionList, setVacansionList] = useLocalStorage(
+    vacation_list_key,
+    []
+  );
+  const [ass_tokenFromLS, setAss_tokenFromLS] = useLocalStorage(
+    ass_token_key,
+    []
+  );
+
+  const addFav = (post) => {
+    setMyFavoriteVacations([...myFavoriteVacations, post]);
+  };
+
+  const delFav = (post) => {
+    setMyFavoriteVacations(post);
+  };
 
   useEffect(() => {
     sendRequest(
@@ -23,13 +46,9 @@ const App = () => {
         },
       }
     )
-      .then((data) =>
-        localStorage.setItem(ass_token_key, JSON.stringify(data.access_token))
-      )
+      .then((data) => setAss_tokenFromLS(data.access_token))
       .catch((error) => console.error(error));
   }, []);
-
-  const [vacansionList, setVacansionList] = useState([]);
 
   useEffect(() => {
     sendRequest(`${API_URL}/2.0/oauth2/vacancies/?published=1`, {
@@ -41,21 +60,19 @@ const App = () => {
       },
     })
       .then((res) => res)
-      .then((data) =>
-        localStorage.setItem(vacation_list_key, JSON.stringify(data.objects))
-      )
+      .then((data) => setVacansionList(data.objects))
       .catch((error) => console.error(error));
   }, []);
 
-  useEffect(() => {
-    setVacansionList(getFromLS(vacation_list_key));
-  }, []);
-
-  const ass_tokenFromLS = getFromLS(ass_token_key);
+  console.log("myFavoriteVacations", myFavoriteVacations);
 
   return (
     <MantineProvider withGlobalStyles>
-      <AppRouter vacansionList={vacansionList} />
+      <AppRouter
+        vacansionList={vacansionList}
+        addFav={addFav}
+        delFav={delFav}
+      />
     </MantineProvider>
   );
 };

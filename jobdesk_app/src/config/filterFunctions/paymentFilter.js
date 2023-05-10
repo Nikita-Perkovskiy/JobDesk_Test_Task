@@ -23,5 +23,11 @@ export const paymentFilter = (payFrom, payTo, payCur) => {
         </b>
       </>
     );
+  } else {
+    return (
+      <>
+        <b className="jobCard__payment">з/п Данных нет</b>
+      </>
+    );
   }
 };
