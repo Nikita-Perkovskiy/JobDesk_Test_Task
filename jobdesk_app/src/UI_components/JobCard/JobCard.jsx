@@ -21,15 +21,21 @@ const JobCard = ({
   postId,
   addFav,
   delFav,
+  starDefolt,
 }) => {
-  const [isActiveStar, setIsActiveStar] = useState(false);
+  const [isActiveStar, setIsActiveStar] = useState(starDefolt);
   const toggleStar = () => {
     setIsActiveStar(!isActiveStar);
   };
 
   return (
     <>
-      <div className="jobCard__container">
+      <div
+        className="jobCard__container"
+        onClick={() => {
+          console.log(postId);
+        }}
+      >
         <div className="jobCard__title-wrapper">
           <h3 className="jobCard__title">{postProfeesion}</h3>
           <div>

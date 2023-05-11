@@ -5,11 +5,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 1.5rem;
   width: 100vw;
-  max-width: 750px;
-  height: 100vh;
-  max-height: 130px;
+  max-width: 773px;
+  padding: 1.5rem;
   background-color: $base-white;
   border: 1px solid $border-white;
   border-radius: 12px;
@@ -27,11 +25,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
   margin-bottom: 12px;
 }
 
 .jobCard__title {
   @include base-title;
+  max-width: 500px;
 }
 
 .jobCard__payment {
@@ -65,4 +65,26 @@
   top: 50%;
   left: -1rem;
   transform: translateY(-50%);
+}
+
+@media (max-width: 780px) {
+  .jobCard__container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 470px) {
+  .jobCard__content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jobCard__workTime {
+    margin-left: 0;
+  }
+
+  .jobCard__workTime::before {
+    height: 0px;
+    width: 0px;
+  }
 }

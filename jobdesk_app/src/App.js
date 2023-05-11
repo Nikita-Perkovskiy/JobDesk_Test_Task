@@ -1,5 +1,4 @@
 import "../node_modules/scss-reset/src/scss/_reset.scss";
-import { MantineProvider } from "@mantine/core";
 import AppRouter from "./Routes/AppRouter";
 import { useEffect, useState } from "react";
 import { sendRequest } from "./config/sendRequest";
@@ -64,16 +63,13 @@ const App = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  console.log("myFavoriteVacations", myFavoriteVacations);
-
   return (
-    <MantineProvider withGlobalStyles>
-      <AppRouter
-        vacansionList={vacansionList}
-        addFav={addFav}
-        delFav={delFav}
-      />
-    </MantineProvider>
+    <AppRouter
+      vacansionList={vacansionList}
+      myFavoriteVacations={myFavoriteVacations}
+      addFav={addFav}
+      delFav={delFav}
+    />
   );
 };
 export default App;

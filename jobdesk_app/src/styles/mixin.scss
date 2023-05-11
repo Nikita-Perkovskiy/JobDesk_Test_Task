@@ -19,3 +19,15 @@
   line-height: 24px;
   color: $base-blue;
 }
+
+@mixin main-fon {
+  width: 100%;
+  height: 100%;
+  background-color: $fon-gray;
+}
+
+@mixin item-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 16px;
+}

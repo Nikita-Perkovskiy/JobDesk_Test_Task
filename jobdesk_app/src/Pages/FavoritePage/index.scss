@@ -5,9 +5,8 @@
   @include main-fon;
 }
 
-.mainPage__content-wrapper {
+.section__PostList {
   @include base-proportion;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
 }

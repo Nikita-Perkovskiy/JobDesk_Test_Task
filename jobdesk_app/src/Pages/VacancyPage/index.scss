@@ -1,0 +1,9 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.vacancyPage-fon {
+  @include main-fon;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+}

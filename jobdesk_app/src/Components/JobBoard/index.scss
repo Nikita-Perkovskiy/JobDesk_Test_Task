@@ -2,7 +2,13 @@
 @import "/src/styles/mixin.scss";
 
 .jobBoard-wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.jobList-wrapper {
+  @include item-list;
 }

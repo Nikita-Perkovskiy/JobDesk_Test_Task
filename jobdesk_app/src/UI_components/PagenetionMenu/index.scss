@@ -1,0 +1,46 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6.8rem;
+}
+
+.pagination-number {
+  padding: 3px 8px 3px 8px;
+  margin: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  color: $base-black;
+  background-color: $base-white;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #d5d6dc;
+}
+
+.pagination-number:hover {
+  border: none;
+  background-color: $base-blue;
+  color: $base-white;
+}
+
+.pagination-nextLink,
+.pagination-previousLink {
+  padding: 4px 8px 5px 8px;
+  margin: 4px;
+  background-color: $base-white;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #d5d6dc;
+}
+
+.pagination-nextLink:hover,
+.pagination-previousLink:hover {
+  border: none;
+  background-color: $base-blue;
+  color: $base-white;
+}
