@@ -4,7 +4,14 @@ import FavoritePage from "../Pages/FavoritePage/FavoritePage";
 import VacancyPage from "../Pages/VacancyPage/VacancyPage";
 import HeaderMenu from "../UI_components/HeaderMenu/HeaderMenu";
 
-const AppRouter = ({ vacansionList, addFav, delFav, myFavoriteVacations }) => {
+const AppRouter = ({
+  vacansionList,
+  addFav,
+  delFav,
+  myFavoriteVacations,
+  addTarg,
+  targetVacantion,
+}) => {
   return (
     <>
       <Router>
@@ -17,6 +24,7 @@ const AppRouter = ({ vacansionList, addFav, delFav, myFavoriteVacations }) => {
                 vacansionList={vacansionList}
                 addFav={addFav}
                 delFav={delFav}
+                addTarg={addTarg}
               />
             }
           />
@@ -27,10 +35,21 @@ const AppRouter = ({ vacansionList, addFav, delFav, myFavoriteVacations }) => {
                 myFavoriteVacations={myFavoriteVacations}
                 addFav={addFav}
                 delFav={delFav}
+                addTarg={addTarg}
               />
             }
           />
-          <Route path="/vacancyPage" element={<VacancyPage />} />
+          <Route
+            path="/vacancyPage"
+            element={
+              <VacancyPage
+                targetVacantion={targetVacantion}
+                addFav={addFav}
+                delFav={delFav}
+                addTarg={addTarg}
+              />
+            }
+          />
         </Routes>
       </Router>
     </>

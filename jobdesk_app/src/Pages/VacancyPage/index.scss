@@ -3,7 +3,13 @@
 
 .vacancyPage-fon {
   @include main-fon;
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
+}
+
+.vacancyPage-wrapper {
+  margin-top: 40px;
+  @include base-proportion;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }

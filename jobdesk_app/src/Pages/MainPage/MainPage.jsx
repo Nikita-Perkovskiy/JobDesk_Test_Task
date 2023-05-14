@@ -2,8 +2,7 @@ import "./index.scss";
 import NavigationMenu from "../../Components/NavigationMenu/NavigationMenu";
 import JobBoard from "../../Components/JobBoard/JobBoard";
 
-const MainPage = ({ vacansionList, addFav, delFav }) => {
-  const starDefolt = false;
+const MainPage = ({ vacansionList, addFav, delFav, addTarg }) => {
   return (
     <>
       <main className="mainPage-fon">
@@ -16,7 +15,7 @@ const MainPage = ({ vacansionList, addFav, delFav }) => {
               vacansionList={vacansionList}
               addFav={addFav}
               delFav={delFav}
-              starDefolt={starDefolt}
+              addTarg={addTarg}
             />
           </section>
         </div>

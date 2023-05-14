@@ -1,6 +1,14 @@
 @import "/src/styles/vars.scss";
 @import "/src/styles/mixin.scss";
 
+.jobCard-link {
+  text-decoration: none;
+}
+
+.jobCard__star-wrapper {
+  z-index: 1000;
+}
+
 .jobCard__container {
   display: flex;
   flex-direction: column;

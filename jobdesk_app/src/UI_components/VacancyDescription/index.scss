@@ -1,0 +1,29 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.vacancyDescription-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100vw;
+  max-width: 773px;
+  padding: 1.5rem;
+  background-color: $base-white;
+  border: 1px solid $border-white;
+  border-radius: 12px;
+
+  p {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: $base-black;
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  li {
+    @include base-text;
+    line-height: 140%;
+  }
+}

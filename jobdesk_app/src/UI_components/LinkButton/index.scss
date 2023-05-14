@@ -1,0 +1,28 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.linkButton__link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkButton__wrapper {
+  width: 164px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $button-grey;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.linkButton__content {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 155%;
+  color: $button-blue;
+  cursor: pointer;
+}

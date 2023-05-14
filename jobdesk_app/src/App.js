@@ -11,6 +11,7 @@ import {
 import {
   ass_token_key,
   myFavPosts_key,
+  targetVacantion_key,
   vacation_list_key,
 } from "./helpers/LocalStorageKeys";
 
@@ -27,6 +28,14 @@ const App = () => {
     ass_token_key,
     []
   );
+  const [targetVacantion, setTargetVacantion] = useLocalStorage(
+    targetVacantion_key,
+    []
+  );
+
+  const addTarg = (post) => {
+    setTargetVacantion(post);
+  };
 
   const addFav = (post) => {
     setMyFavoriteVacations([...myFavoriteVacations, post]);
@@ -63,12 +72,17 @@ const App = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  // console.log(" targetVacantion in App", targetVacantion);
+  //console.log(" myFavoriteVacations", myFavoriteVacations);
+  // console.log(" vacansionList", vacansionList);
   return (
     <AppRouter
       vacansionList={vacansionList}
       myFavoriteVacations={myFavoriteVacations}
       addFav={addFav}
       delFav={delFav}
+      addTarg={addTarg}
+      targetVacantion={targetVacantion}
     />
   );
 };

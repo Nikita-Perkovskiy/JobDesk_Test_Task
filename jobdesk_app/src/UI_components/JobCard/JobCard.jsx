@@ -1,15 +1,17 @@
-import { useState } from "react";
 import "./index.scss";
 import ActiveStar from "./svges/ActiveStar/ActiveStar";
 import MapPoint from "./svges/MapPoint/MapPoint";
 import NonActiveStar from "./svges/NonActiveStar/NonActiveStar";
-import { addMyFavoritePost } from "../../config/myFavoritesFunctions/addMyFavoritePost";
 import { paymentFilter } from "../../config/filterFunctions/paymentFilter";
 import {
   myFavPosts_key,
   vacation_list_key,
 } from "../../helpers/LocalStorageKeys";
-import { deleteMyFavoritePost } from "../../config/myFavoritesFunctions/deleteMyFavoritePost";
+import { addPost } from "../../config/postFunctions/addPost";
+import { deletePost } from "../../config/postFunctions/deletePost";
+import { useLocalStorage } from "../../config/customHooks/useLocalStorage";
+import { useEffect } from "react";
+import { getFromLS } from "../../config/localStorageFunctions/getFromLS";
 
 const JobCard = ({
   postProfeesion,
@@ -21,19 +23,30 @@ const JobCard = ({
   postId,
   addFav,
   delFav,
-  starDefolt,
+  addTarg,
 }) => {
-  const [isActiveStar, setIsActiveStar] = useState(starDefolt);
+  let defoltIsActiveStar = false;
+
+  useEffect(() => {
+    defoltIsActiveStar = getFromLS(`${postId}_key`);
+  }, []);
+
+  const [isActiveStar, setIsActiveStar] = useLocalStorage(
+    `${postId}_key`,
+    defoltIsActiveStar
+  );
+
   const toggleStar = () => {
     setIsActiveStar(!isActiveStar);
   };
+  console.log(postId, "isActiveStar", isActiveStar);
 
   return (
     <>
       <div
         className="jobCard__container"
         onClick={() => {
-          console.log(postId);
+          addPost(postId, vacation_list_key, addTarg);
         }}
       >
         <div className="jobCard__title-wrapper">
@@ -41,18 +54,22 @@ const JobCard = ({
           <div>
             {isActiveStar ? (
               <div
-                onClick={() => {
-                  deleteMyFavoritePost(postId, myFavPosts_key, delFav);
+                className="jobCard__star-wrapper"
+                onClick={(e) => {
                   toggleStar();
+                  deletePost(postId, myFavPosts_key, delFav);
+                  e.stopPropagation();
                 }}
               >
                 <ActiveStar />
               </div>
             ) : (
               <div
-                onClick={() => {
-                  addMyFavoritePost(postId, vacation_list_key, addFav);
+                className="jobCard__star-wrapper"
+                onClick={(e) => {
                   toggleStar();
+                  addPost(postId, vacation_list_key, addFav);
+                  e.stopPropagation();
                 }}
               >
                 <NonActiveStar />
