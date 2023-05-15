@@ -14,7 +14,7 @@ const PagenationMenu = ({ jobList, ITEMS_PER_PAGE, setCurrentPage }) => {
         previousLabel={<ArrowLeft />}
         nextLabel={<ArrowRight />}
         containerClassName="pagination-wrapper"
-        activeClassName="active"
+        activeClassName="pagination-active"
         pageClassName="pagination-number"
         previousLinkClassName="pagination-previousLink"
         nextLinkClassName="pagination-nextLink"

@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import JobCard from "../../UI_components/JobCard/JobCard";
 import { verifyVacansionList } from "../../config/filterFunctions/verifyVacansionList";
 import "./index.scss";
 import PagenationMenu from "../../UI_components/PagenetionMenu/PagenationMenu";
 
 const JobBoard = ({ vacansionList, addFav, delFav, addTarg }) => {
-  // const jobList = verifyVacansionList(vacansionList);
-  const jobList = vacansionList;
+  const jobList = verifyVacansionList(vacansionList);
   const [currentPage, setCurrentPage] = useState(0);
   const ITEMS_PER_PAGE = 4;
 

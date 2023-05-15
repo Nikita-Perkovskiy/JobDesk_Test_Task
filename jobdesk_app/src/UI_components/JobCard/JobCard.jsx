@@ -10,8 +10,7 @@ import {
 import { addPost } from "../../config/postFunctions/addPost";
 import { deletePost } from "../../config/postFunctions/deletePost";
 import { useLocalStorage } from "../../config/customHooks/useLocalStorage";
-import { useEffect } from "react";
-import { getFromLS } from "../../config/localStorageFunctions/getFromLS";
+import { useNavigate } from "react-router-dom";
 
 const JobCard = ({
   postProfeesion,
@@ -25,21 +24,19 @@ const JobCard = ({
   delFav,
   addTarg,
 }) => {
-  let defoltIsActiveStar = false;
-
-  useEffect(() => {
-    defoltIsActiveStar = getFromLS(`${postId}_key`);
-  }, []);
-
+  const navigate = useNavigate();
   const [isActiveStar, setIsActiveStar] = useLocalStorage(
     `${postId}_key`,
-    defoltIsActiveStar
+    false
   );
 
   const toggleStar = () => {
     setIsActiveStar(!isActiveStar);
   };
-  console.log(postId, "isActiveStar", isActiveStar);
+
+  const handlClick = () => {
+    navigate("/vacancyPage");
+  };
 
   return (
     <>
@@ -47,6 +44,7 @@ const JobCard = ({
         className="jobCard__container"
         onClick={() => {
           addPost(postId, vacation_list_key, addTarg);
+          handlClick();
         }}
       >
         <div className="jobCard__title-wrapper">
@@ -58,6 +56,7 @@ const JobCard = ({
                 onClick={(e) => {
                   toggleStar();
                   deletePost(postId, myFavPosts_key, delFav);
+                  console.log(postId, "isActiveStar", isActiveStar);
                   e.stopPropagation();
                 }}
               >
@@ -69,6 +68,7 @@ const JobCard = ({
                 onClick={(e) => {
                   toggleStar();
                   addPost(postId, vacation_list_key, addFav);
+                  console.log(postId, "isActiveStar", isActiveStar);
                   e.stopPropagation();
                 }}
               >

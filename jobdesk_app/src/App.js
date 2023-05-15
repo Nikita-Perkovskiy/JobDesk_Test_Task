@@ -59,7 +59,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    sendRequest(`${API_URL}/2.0/oauth2/vacancies/?published=1`, {
+    sendRequest(`${API_URL}/2.0/oauth2/vacancies/?published=1&count=100`, {
       method: "GET",
       headers: {
         "x-secret-key": `${X_SECRET_KEY}`,
@@ -72,9 +72,9 @@ const App = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  // console.log(" targetVacantion in App", targetVacantion);
-  //console.log(" myFavoriteVacations", myFavoriteVacations);
-  // console.log(" vacansionList", vacansionList);
+  //console.log(" targetVacantion in App", targetVacantion);
+  //console.log(" myFavoriteVacations in App", myFavoriteVacations);
+  //console.log(" vacansionList in App", vacansionList);
   return (
     <AppRouter
       vacansionList={vacansionList}

@@ -9,8 +9,6 @@ const VacancyPage = ({
   starDefolt,
   addTarg,
 }) => {
-  //console.log(" targetVacantion in VacansyPage", targetVacantion);
-
   return (
     <>
       <main className="vacancyPage-fon">

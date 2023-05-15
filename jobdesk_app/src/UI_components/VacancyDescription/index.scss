@@ -12,7 +12,9 @@
   background-color: $base-white;
   border: 1px solid $border-white;
   border-radius: 12px;
+  margin-top: 20px;
 
+  b,
   p {
     font-weight: 700;
     font-size: 20px;
@@ -25,5 +27,19 @@
   li {
     @include base-text;
     line-height: 140%;
+    position: relative;
+    margin-left: 1rem;
+  }
+
+  li::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 45%;
+    background-color: $base-black;
+    position: absolute;
+    top: 50%;
+    left: -2%;
+    transform: translate(-50%, -50%);
   }
 }
