@@ -3,9 +3,13 @@ import "./index.scss";
 const NavigationMenu = () => {
   return (
     <>
-      <section
-        style={{ height: "300px", width: "200px", backgroundColor: "orange" }}
-      ></section>
+      <section>
+        <div>
+          <h2></h2>
+          <p></p>
+        </div>
+        <div></div>
+      </section>
     </>
   );
 };

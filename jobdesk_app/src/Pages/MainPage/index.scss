@@ -10,4 +10,19 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.section__jobList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2.5em;
+}
+
+@media (max-width: 996px) {
+  .mainPage__content-wrapper {
+    justify-content: center;
+  }
 }

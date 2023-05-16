@@ -1,0 +1,46 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.engineBar__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 773px;
+  background-color: $base-white;
+  max-height: 48px;
+  border: 1px solid #eaebed;
+  border-radius: 8px;
+}
+
+.engineBar__button-wrapper {
+  display: inline-block;
+  width: 83px;
+  height: 32px;
+  margin: 8px 12px 8px 9px;
+}
+
+.engineBar__input {
+  width: 100%;
+  height: 100%;
+  background-color: $base-white;
+  border: none;
+  @include base-text;
+}
+
+.enginebar__input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  margin-left: 30px;
+  color: $gray-500;
+}
+
+.engineBar__input:focus::placeholder {
+  color: $base-white;
+}
+
+.engineBar__svg-wrapper {
+  margin-left: 14px;
+  margin-right: 10px;
+}

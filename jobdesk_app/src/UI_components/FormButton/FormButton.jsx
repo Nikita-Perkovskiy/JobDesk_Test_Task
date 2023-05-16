@@ -3,7 +3,9 @@ import "./index.scss";
 const FormButton = ({ buttonText }) => {
   return (
     <>
-      <button>{buttonText}</button>
+      <button type="submit" className="form-button">
+        {buttonText}
+      </button>
     </>
   );
 };

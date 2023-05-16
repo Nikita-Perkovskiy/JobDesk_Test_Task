@@ -37,11 +37,13 @@ const JobBoard = ({ vacansionList, addFav, delFav, addTarg }) => {
             );
           })}
         </ul>
-        <PagenationMenu
-          jobList={jobList}
-          ITEMS_PER_PAGE={ITEMS_PER_PAGE}
-          setCurrentPage={setCurrentPage}
-        />
+        {jobList.length >= 5 && (
+          <PagenationMenu
+            jobList={jobList}
+            ITEMS_PER_PAGE={ITEMS_PER_PAGE}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
       </div>
     </>
   );

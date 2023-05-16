@@ -1,6 +1,6 @@
 export const paymentFilter = (payFrom, payTo, payCur) => {
   if (payFrom !== 0 && payTo !== 0) {
-    if (+payFrom > +payTo) {
+    if (+payFrom < +payTo) {
       return (
         <>
           <b className="jobCard__payment">
@@ -8,11 +8,19 @@ export const paymentFilter = (payFrom, payTo, payCur) => {
           </b>
         </>
       );
-    } else {
+    } else if (+payFrom > +payTo) {
       return (
         <>
           <b className="jobCard__payment">
             з/п от {payTo} - {payFrom} {payCur}
+          </b>
+        </>
+      );
+    } else if (+payFrom === +payTo) {
+      return (
+        <>
+          <b className="jobCard__payment">
+            з/п {payTo} {payCur}
           </b>
         </>
       );

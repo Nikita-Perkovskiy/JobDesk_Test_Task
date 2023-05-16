@@ -11,6 +11,8 @@ const AppRouter = ({
   myFavoriteVacations,
   addTarg,
   targetVacantion,
+  engineData,
+  setEngineData,
 }) => {
   return (
     <>
@@ -25,6 +27,8 @@ const AppRouter = ({
                 addFav={addFav}
                 delFav={delFav}
                 addTarg={addTarg}
+                engineData={engineData}
+                setEngineData={setEngineData}
               />
             }
           />
