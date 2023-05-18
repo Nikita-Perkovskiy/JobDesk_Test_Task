@@ -8,6 +8,7 @@ import { sendRequest } from "../../config/sendRequest";
 import { useEffect } from "react";
 import { API_URL } from "../../helpers/API";
 import { X_SECRET_KEY } from "../../helpers/AuthenticationParams";
+import { sectorListFilter } from "../../config/filterFunctions/sectorListFilter";
 
 const MainPage = ({
   vacansionList,
@@ -16,6 +17,7 @@ const MainPage = ({
   addTarg,
   engineData,
   setEngineData,
+  setNavMenuData,
 }) => {
   const [sectorsArr, setSectorsArr] = useLocalStorage(sectorsArray_key, []);
 
@@ -29,18 +31,21 @@ const MainPage = ({
       },
     })
       .then((res) => res)
-      .then((data) => setSectorsArr(data))
+      .then((data) => {
+        setSectorsArr(sectorListFilter(data));
+      })
       .catch((error) => console.error(error));
   }, []);
-
-  console.log("sectorsArr", sectorsArr);
 
   return (
     <>
       <main className="mainPage-fon">
         <div className="mainPage__content-wrapper">
           <section className="section__nav">
-            <NavigationMenu />
+            <NavigationMenu
+              sectorsArr={sectorsArr}
+              setNavMenuData={setNavMenuData}
+            />
           </section>
           <section className="section__jobList">
             <EngineBar engineData={engineData} setEngineData={setEngineData} />

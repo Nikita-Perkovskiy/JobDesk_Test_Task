@@ -44,3 +44,44 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@mixin label-text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: $base-black;
+}
+
+@mixin h2-paragraph {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: $base-black;
+}
+
+@mixin button-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $gray-500;
+  cursor: pointer;
+}
+
+@mixin place-holder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $gray-500;
+  cursor: pointer;
+}
+
+@mixin input-Container {
+  width: 275px;
+  height: 42px;
+  border: 1px solid #d5d6dc;
+  color: $gray-500;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}

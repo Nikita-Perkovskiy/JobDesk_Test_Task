@@ -13,6 +13,7 @@ const AppRouter = ({
   targetVacantion,
   engineData,
   setEngineData,
+  setNavMenuData,
 }) => {
   return (
     <>
@@ -29,6 +30,7 @@ const AppRouter = ({
                 addTarg={addTarg}
                 engineData={engineData}
                 setEngineData={setEngineData}
+                setNavMenuData={setNavMenuData}
               />
             }
           />

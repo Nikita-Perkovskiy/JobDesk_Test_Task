@@ -1,0 +1,15 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.dropdownMenu__container {
+  @include input-Container;
+}
+
+.dropdownMenu__item {
+  @include base-text;
+  color: $base-black;
+}
+
+.dropdownMenu__placeholder {
+  @include place-holder;
+}

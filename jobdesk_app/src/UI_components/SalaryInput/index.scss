@@ -1,0 +1,23 @@
+@import "/src/styles/vars.scss";
+@import "/src/styles/mixin.scss";
+
+.salaryInput__container {
+  @include input-Container;
+  position: relative;
+}
+
+.salaryInput__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.salaryInput__input {
+  border: none;
+}

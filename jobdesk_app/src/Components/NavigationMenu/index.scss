@@ -1,2 +1,51 @@
 @import "/src/styles/vars.scss";
 @import "/src/styles/mixin.scss";
+
+.sidebar__wrapper {
+  max-width: 315px;
+  width: 100vw;
+  padding: 1.3rem;
+  background-color: $base-white;
+  border: 1px solid $border-white;
+  border-radius: 12px;
+}
+
+.slidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slidebar__title {
+  @include h2-paragraph;
+}
+
+.slidebar__button-text {
+  @include button-text;
+  margin-right: 9px;
+}
+
+.slidebar__button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.slidebar__label-text {
+  @include label-text;
+}
+
+.slidebar__label-wrapper {
+  margin-top: 1.3rem;
+}
+
+.slidebar__dropdownMenu-wrapper {
+  margin-top: 2rem;
+}
+
+.sidebar__button-wrapper {
+  display: inline-block;
+  margin-top: 2rem;
+  width: 275px;
+  height: 40px;
+}

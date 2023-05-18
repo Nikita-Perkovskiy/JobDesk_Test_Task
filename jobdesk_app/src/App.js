@@ -12,6 +12,7 @@ import {
   ass_token_key,
   engineData_key,
   myFavPosts_key,
+  navMenuData_key,
   targetVacantion_key,
   vacation_list_key,
 } from "./helpers/LocalStorageKeys";
@@ -33,6 +34,8 @@ const App = () => {
     targetVacantion_key,
     []
   );
+  const [navMenuData, setNavMenuData] = useLocalStorage(navMenuData_key, {});
+
   const [engineData, setEngineData] = useLocalStorage(engineData_key, "");
 
   const addTarg = (post) => {
@@ -81,6 +84,8 @@ const App = () => {
   //console.log(" myFavoriteVacations in App", myFavoriteVacations);
   //console.log(" vacansionList in App", vacansionList);
   //console.log("engineData", engineData);
+  console.log("navMenuData", navMenuData);
+
   return (
     <AppRouter
       vacansionList={vacansionList}
@@ -92,6 +97,7 @@ const App = () => {
       targetVacantion={targetVacantion}
       engineData={engineData}
       setEngineData={setEngineData}
+      setNavMenuData={setNavMenuData}
     />
   );
 };
