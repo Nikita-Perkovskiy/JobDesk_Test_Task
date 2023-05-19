@@ -1,5 +1,5 @@
 import "./index.scss";
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 import CrossIcon from "./svges/CrossIcon";
 import DropdownMenu from "../../UI_components/DropdownMenu/DropdownMenu";
 import { useLocalStorage } from "../../config/customHooks/useLocalStorage";
@@ -10,43 +10,46 @@ import {
 } from "../../helpers/LocalStorageKeys";
 import SalaryInput from "../../UI_components/SalaryInput/SalaryInput";
 import FormButton from "../../UI_components/FormButton/FormButton";
+import { useState } from "react";
 
 const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
   const [salaryFrom, setSalaryFrom] = useLocalStorage(salaryFrom_key, 0);
   const [salaryTo, setSalaryTo] = useLocalStorage(salaryTo_key, 0);
-  const [dropDownValue, setDropDownValue] = useLocalStorage(
-    dropDownValue_key,
-    ""
-  );
+  // const [dropDownValue, setDropDownValue] = useLocalStorage(
+  //   dropDownValue_key,
+  //   0
+  // );
+
+  const [dropDownValue, setDropDownValue] = useState(0);
 
   const initialValues = {
-    dropdownMenu: dropDownValue,
+    dropDownValue: +dropDownValue,
     salaryTo: salaryTo,
     salaryFrom: salaryFrom,
   };
 
-  const handleSubmit = (values) => {
-    setNavMenuData(values);
+  const handleSubmit = () => {
+    setNavMenuData(initialValues);
   };
 
   const salaryFromDecrease = () => {
     if (salaryFrom !== 0) {
-      setSalaryFrom((salaryFrom) => salaryFrom - 500);
+      setSalaryFrom((salaryFrom) => salaryFrom - 1000);
     }
   };
 
   const salaryFromIncrease = () => {
-    setSalaryFrom((salaryFrom) => salaryFrom + 500);
+    setSalaryFrom((salaryFrom) => salaryFrom + 1000);
   };
 
   const salaryToDecrease = () => {
     if (salaryTo !== 0) {
-      setSalaryTo((setSalaryTo) => setSalaryTo - 500);
+      setSalaryTo((setSalaryTo) => setSalaryTo - 1000);
     }
   };
 
   const salaryToIncrease = () => {
-    setSalaryTo((setSalaryTo) => setSalaryTo + 500);
+    setSalaryTo((setSalaryTo) => setSalaryTo + 1000);
   };
 
   const dropdownChange = (event) => {
@@ -54,7 +57,12 @@ const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
     setDropDownValue(selectedValue);
   };
 
-  console.log("dropDownValue", dropDownValue);
+  const cleanForm = () => {
+    setDropDownValue(0);
+    setSalaryFrom(0);
+    setSalaryTo(0);
+    setNavMenuData({ dropDownValue: 0, salaryTo: 0, salaryFrom: 0 });
+  };
 
   return (
     <>
@@ -66,7 +74,7 @@ const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
               <button
                 type="button"
                 className="slidebar__button"
-                onSubmit={handleSubmit}
+                onClick={() => cleanForm()}
               >
                 <p className="slidebar__button-text">Сбросить все</p>
                 <CrossIcon />
@@ -77,7 +85,7 @@ const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
                 Отрасль
               </label>
               <DropdownMenu
-                nameField={"dropdownMenu"}
+                nameField={"dropDownValue"}
                 sectorsArr={sectorsArr}
                 dropdownChange={dropdownChange}
                 dropDownValue={dropDownValue}

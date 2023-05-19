@@ -13,7 +13,6 @@ const DropdownMenu = ({
       <Field
         className="dropdownMenu__container"
         as="select"
-        id="dropdownMenu"
         name={nameField}
         placeholder={placeholder}
         value={dropDownValue}
@@ -24,7 +23,7 @@ const DropdownMenu = ({
           <option
             className="dropdownMenu__item"
             key={element.key}
-            value={element.value}
+            value={element.key}
           >
             {element.value}
           </option>
