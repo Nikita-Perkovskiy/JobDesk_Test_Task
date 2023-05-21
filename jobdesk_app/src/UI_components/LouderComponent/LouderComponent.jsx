@@ -6,15 +6,15 @@ const LouderComponent = () => {
     <>
       <div className="ovalLoading-wrapper">
         <Oval
-          height={200}
-          width={200}
+          height={250}
+          width={250}
           color="#000000"
           wrapperClass=""
           visible={true}
           ariaLabel="oval-loading"
           secondaryColor="#ffffff"
-          strokeWidth={3}
-          strokeWidthSecondary={4}
+          strokeWidth={2}
+          strokeWidthSecondary={3}
         />
       </div>
     </>

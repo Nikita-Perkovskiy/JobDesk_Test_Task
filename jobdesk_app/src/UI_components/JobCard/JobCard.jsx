@@ -53,11 +53,10 @@ const JobCard = ({
             {isActiveStar ? (
               <div
                 className="jobCard__star-wrapper"
-                onClick={(e) => {
-                  toggleStar();
-                  deletePost(postId, myFavPosts_key, delFav);
-                  console.log(postId, "isActiveStar", isActiveStar);
+                onClick={async (e) => {
                   e.stopPropagation();
+                  await toggleStar();
+                  await deletePost(postId, myFavPosts_key, delFav);
                 }}
               >
                 <ActiveStar />
@@ -65,11 +64,10 @@ const JobCard = ({
             ) : (
               <div
                 className="jobCard__star-wrapper"
-                onClick={(e) => {
-                  toggleStar();
-                  addPost(postId, vacation_list_key, addFav);
-                  console.log(postId, "isActiveStar", isActiveStar);
+                onClick={async (e) => {
                   e.stopPropagation();
+                  await toggleStar();
+                  await addPost(postId, vacation_list_key, addFav);
                 }}
               >
                 <NonActiveStar />

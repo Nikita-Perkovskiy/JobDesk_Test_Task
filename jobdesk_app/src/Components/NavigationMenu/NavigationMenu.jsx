@@ -4,23 +4,20 @@ import CrossIcon from "./svges/CrossIcon";
 import DropdownMenu from "../../UI_components/DropdownMenu/DropdownMenu";
 import { useLocalStorage } from "../../config/customHooks/useLocalStorage";
 import {
-  dropDownValue_key,
+  dropDownData_key,
   salaryFrom_key,
   salaryTo_key,
 } from "../../helpers/LocalStorageKeys";
 import SalaryInput from "../../UI_components/SalaryInput/SalaryInput";
 import FormButton from "../../UI_components/FormButton/FormButton";
-import { useState } from "react";
 
 const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
   const [salaryFrom, setSalaryFrom] = useLocalStorage(salaryFrom_key, 0);
   const [salaryTo, setSalaryTo] = useLocalStorage(salaryTo_key, 0);
-  // const [dropDownValue, setDropDownValue] = useLocalStorage(
-  //   dropDownValue_key,
-  //   0
-  // );
-
-  const [dropDownValue, setDropDownValue] = useState(0);
+  const [dropDownValue, setDropDownValue] = useLocalStorage(
+    dropDownData_key,
+    0
+  );
 
   const initialValues = {
     dropDownValue: +dropDownValue,

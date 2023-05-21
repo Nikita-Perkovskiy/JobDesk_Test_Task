@@ -7,5 +7,5 @@ export const engineData_key = "engineData";
 export const sectorsArray_key = "sectorsArray";
 export const salaryFrom_key = "salaryFrom";
 export const salaryTo_key = "salaryTo";
-export const dropDownValue_key = "dropDownValue";
+export const dropDownData_key = "dropDownData";
 export const navMenuData_key = "navMenuData";
