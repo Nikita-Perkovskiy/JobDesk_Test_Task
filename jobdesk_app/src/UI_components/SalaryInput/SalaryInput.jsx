@@ -9,6 +9,7 @@ const SalaryInput = ({
   salaryDecrease,
   salaryIncrease,
   placeholder,
+  dataElem,
 }) => {
   return (
     <>
@@ -18,6 +19,7 @@ const SalaryInput = ({
           name={nameField}
           placeholder={placeholder}
           value={salaryInit}
+          data-elem={dataElem}
         />
         <span className="salaryInput__button-wrapper">
           <button

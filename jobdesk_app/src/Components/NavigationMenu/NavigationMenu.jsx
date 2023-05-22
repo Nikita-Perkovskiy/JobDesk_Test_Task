@@ -99,6 +99,7 @@ const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
                 salaryDecrease={salaryFromDecrease}
                 salaryIncrease={salaryFromIncrease}
                 placeholder={"От"}
+                dataElem={"salary-from-input"}
               />
 
               <SalaryInput
@@ -107,6 +108,7 @@ const NavigationMenu = ({ sectorsArr, setNavMenuData }) => {
                 salaryDecrease={salaryToDecrease}
                 salaryIncrease={salaryToIncrease}
                 placeholder={"До"}
+                dataElem={"salary-to-input"}
               />
             </div>
             <span className="sidebar__button-wrapper">

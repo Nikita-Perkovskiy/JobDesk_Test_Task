@@ -17,6 +17,7 @@ const DropdownMenu = ({
         placeholder={placeholder}
         value={dropDownValue}
         onChange={dropdownChange}
+        data-elem="industry-select"
       >
         <option className="dropdownMenu__placeholder">Выберете отрасль</option>
         {sectorsArr.map((element) => (

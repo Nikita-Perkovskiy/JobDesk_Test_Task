@@ -11,7 +11,6 @@ import {
 } from "./helpers/AuthenticationParams";
 import {
   ass_token_key,
-  engineData_key,
   myFavPosts_key,
   navMenuData_key,
   targetVacantion_key,
@@ -38,7 +37,6 @@ const App = () => {
   );
   const [navMenuData, setNavMenuData] = useLocalStorage(navMenuData_key, {});
   const [engineData, setEngineData] = useState("");
-  // useLocalStorage(engineData_key, "");
   const [loader, setLoader] = useState(true);
 
   const addTarg = (post) => {
@@ -53,6 +51,7 @@ const App = () => {
     setMyFavoriteVacations(post);
   };
 
+  // ass_token request
   // useEffect(() => {
   //   setLoader(true);
   //   sendRequest(
@@ -111,12 +110,6 @@ const App = () => {
       })
       .catch((error) => console.error(error));
   }, [engineData]);
-
-  //console.log(" targetVacantion in App", targetVacantion);
-  //console.log(" myFavoriteVacations in App", myFavoriteVacations);
-  //console.log(" vacansionList in App", vacansionList);
-  // console.log("engineData", engineData);
-  // console.log("navMenuData", navMenuData);
 
   return loader ? (
     <LouderComponent />

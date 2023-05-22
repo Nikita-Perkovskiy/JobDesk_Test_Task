@@ -3,6 +3,7 @@ import JobBoard from "../../Components/JobBoard/JobBoard";
 import EmptyState from "../../UI_components/EmptyState/EmptyState";
 
 const FavoritePage = ({ myFavoriteVacations, addFav, delFav, addTarg }) => {
+  console.log(myFavoriteVacations);
   return (
     <>
       {myFavoriteVacations.length === 0 ? (

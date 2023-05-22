@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { API_URL } from "../../helpers/API";
 import { X_SECRET_KEY } from "../../helpers/AuthenticationParams";
 import { sectorListFilter } from "../../config/filterFunctions/sectorListFilter";
+import EmptyState from "../../UI_components/EmptyState/EmptyState";
 
 const MainPage = ({
   vacansionList,
@@ -39,25 +40,32 @@ const MainPage = ({
 
   return (
     <>
-      <main className="mainPage-fon">
-        <div className="mainPage__content-wrapper">
-          <section className="section__nav">
-            <NavigationMenu
-              sectorsArr={sectorsArr}
-              setNavMenuData={setNavMenuData}
-            />
-          </section>
-          <section className="section__jobList">
-            <EngineBar engineData={engineData} setEngineData={setEngineData} />
-            <JobBoard
-              vacansionList={vacansionList}
-              addFav={addFav}
-              delFav={delFav}
-              addTarg={addTarg}
-            />
-          </section>
-        </div>
-      </main>
+      {vacansionList === 0 ? (
+        <EmptyState />
+      ) : (
+        <main className="mainPage-fon">
+          <div className="mainPage__content-wrapper">
+            <section className="section__nav">
+              <NavigationMenu
+                sectorsArr={sectorsArr}
+                setNavMenuData={setNavMenuData}
+              />
+            </section>
+            <section className="section__jobList">
+              <EngineBar
+                engineData={engineData}
+                setEngineData={setEngineData}
+              />
+              <JobBoard
+                vacansionList={vacansionList}
+                addFav={addFav}
+                delFav={delFav}
+                addTarg={addTarg}
+              />
+            </section>
+          </div>
+        </main>
+      )}
     </>
   );
 };

@@ -46,6 +46,7 @@ const JobCard = ({
           addPost(postId, vacation_list_key, addTarg);
           handlClick();
         }}
+        data-elem={`vacancy-${postId}`}
       >
         <div className="jobCard__title-wrapper">
           <h3 className="jobCard__title">{postProfeesion}</h3>
@@ -53,6 +54,7 @@ const JobCard = ({
             {isActiveStar ? (
               <div
                 className="jobCard__star-wrapper"
+                data-elem={`vacancy-${postId}-shortlist-button`}
                 onClick={async (e) => {
                   e.stopPropagation();
                   await toggleStar();
@@ -64,6 +66,7 @@ const JobCard = ({
             ) : (
               <div
                 className="jobCard__star-wrapper"
+                data-elem={`vacancy-${postId}-shortlist-button`}
                 onClick={async (e) => {
                   e.stopPropagation();
                   await toggleStar();

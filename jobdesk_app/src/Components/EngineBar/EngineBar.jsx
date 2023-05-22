@@ -24,6 +24,7 @@ const EngineBar = ({ engineData, setEngineData }) => {
           type="text"
           name="formData"
           placeholder="Введите название вакансии?"
+          data-elem="search-input"
         />
         <span className="engineBar__button-wrapper">
           <FormButton buttonText="Поиск" type="submit" />
