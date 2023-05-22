@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Nikita-Perkovskiy.github.io/JobDesk_Test_Task/static/css/main.7a7868dc.css",
+    "main.js": "/Nikita-Perkovskiy.github.io/JobDesk_Test_Task/static/js/main.1157b55d.js",
+    "index.html": "/Nikita-Perkovskiy.github.io/JobDesk_Test_Task/index.html",
+    "main.7a7868dc.css.map": "/Nikita-Perkovskiy.github.io/JobDesk_Test_Task/static/css/main.7a7868dc.css.map",
+    "main.1157b55d.js.map": "/Nikita-Perkovskiy.github.io/JobDesk_Test_Task/static/js/main.1157b55d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a7868dc.css",
+    "static/js/main.1157b55d.js"
+  ]
+}
